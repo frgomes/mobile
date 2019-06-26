@@ -1,15 +1,13 @@
 name := "mobile"
 
-//version := "2017.12.0-SNAPSHOT"
-
 enablePlugins(ScalaJSPlugin)
 
-
-val scala212 = "2.12.4"
+val scala212 = "2.12.8"
+val scala213 = "2.13.0"
 
 scalaVersion := scala212
 
-crossScalaVersions := Seq(scala212)
+crossScalaVersions := Seq(scala212, scala213)
 
 scalacOptions ++= Seq(
   "-feature",
@@ -21,8 +19,8 @@ scalacOptions ++= Seq(
 //Dependencies
 
 libraryDependencies ++= Seq(
-  "scalajs-react-interface" %%% "universal" % "2018.2.2-RC" % Provided,
-  "scalajs-react-interface" %%% "core" % "2018.2.2-RC" % Provided)
+  "scalajs-react-interface" %%% "universal" % "2019.06.26" % Provided,
+  "scalajs-react-interface" %%% "core" % "2019.06.26" % Provided)
 
 //bintray
 resolvers += Resolver.jcenterRepo
@@ -75,8 +73,8 @@ resolvers ++=Seq(Resolver.bintrayRepo("scalajs-react-interface", "maven"),
   Resolver.bintrayRepo("scalajs-plus", "maven"))
 
 libraryDependencies ++= Seq(
-  "org.scala-js" %%% "scalajs-dom" % "0.9.4" % Test,
-  "scalajs-jest" %%% "core" % "2018.2.2-RC" % Test
+  "org.scala-js" %%% "scalajs-dom" % "0.9.7" % Test,
+  "scalajs-jest" %%% "core" % "2019.06.26" % Test
 )
 //scalaJSStage in Global := FastOptStage
 scalaJSStage in Global := FullOptStage
